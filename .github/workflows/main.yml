@@ -23,15 +23,15 @@ jobs:
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER}@${SSH_PRIVATE_KEY} '
             
-            if ls | grep ga-demo-html; then 
-              sudo rm -rf ga-demo-html
+            if ls | grep nginx; then 
+              sudo rm -rf nginx
             fi
       
             sudo git clone https://github.com/sathwika46/nginx.git
       
             sudo rm /var/www/html/*.html
       
-            sudo mv ga-demo-html/index.html /var/www/html/
+            sudo mv nginx/index.html /var/www/html/
       
             sudo systemctl restart apache2
           '
