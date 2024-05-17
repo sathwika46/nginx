@@ -16,7 +16,7 @@ jobs:
       
       - name: Build & Deploy
         env:
-          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          #PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_PRIVATE_KEY: ${{ secrets.INSTANCE_HOST }}
           USER: ${{ secrets.USER }}
         run: |
